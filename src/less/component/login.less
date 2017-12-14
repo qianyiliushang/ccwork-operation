@@ -1,0 +1,55 @@
+@import "~global/common.less";
+
+.login-page, .register-page{
+  height: 70%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .login, .register{
+    width: @u*400;
+    height: @u*300;
+    display: flex;
+    justify-content: center;
+    .login-form-button, .register-form-button{
+      width:100%
+    }
+  }
+}
+
+.full-center{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.wrapper{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width:@u*400;
+  height: @u*600;
+  background: #f1f1f1;
+  flex-direction: column;
+  .title{
+    font-size: @u*18;
+    padding: @u*10;
+    font-weight: 400;
+    height: @u*100;
+    .normal-title{
+      padding: 10px;
+      color: #3c3c3c;
+
+    }
+    .selected{
+      border-bottom: solid 2px;
+      color: @c5;
+      border-color: @c5;
+    }
+    a:hover{
+      border-bottom: solid 2px;
+      border-color: @c5;
+    }
+  }
+}
