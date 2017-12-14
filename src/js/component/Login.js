@@ -7,7 +7,7 @@ import mobx from '../mobx-data';
 import { observer } from 'mobx-react';
 
 
-const { action: {authInfo, userInfo} } = mobx;
+const { action: {authInfo, userInfo, common } } = mobx;
 const FormItem = Form.Item;
 const history = createHashHistory();
 
@@ -24,11 +24,9 @@ class LoginForm extends React.Component {
                 console.log('表单数据为：', values);
                 message.info('user logged in');
                 userInfo.updateAccount(values.account);
-                console.log(2, mobx.store.userInfo.account);
                 authInfo.updateAuth('test token', 'test session');
-                console.log(1, mobx.store.authInfo.token);
+                //common.updateHide();
                 history.push('/home');
-                console.log(3);
             }
         });
     }

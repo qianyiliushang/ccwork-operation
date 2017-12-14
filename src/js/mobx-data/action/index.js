@@ -34,3 +34,14 @@ export class UserInfoAction {
         this.userInfo.account = account;
     }
 }
+
+export class CommonAction {
+    constructor({ common }) {
+        this.common = common;
+    }
+
+    @action('隐藏或者显示登录窗口') updateHide = () => {
+        console.log('hide');
+        this.common.hideLogin = !this.common.hideLogin;
+    }
+}

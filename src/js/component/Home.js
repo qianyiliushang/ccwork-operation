@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 import createHashHistory from 'history/createHashHistory';
 import mobx from '../mobx-data';
 
-const { store: { userInfo }} = mobx;
+const { store: { userInfo }, action} = mobx;
 const { Header, Content, Sider } = Layout;
 const SubMenu = Menu.SubMenu;
 const history = createHashHistory();
@@ -34,10 +34,17 @@ class Home extends Component {
         history.push('/login');
     }
 
+    componentWillMount() {
+        action.common.updateHide();
+    }
+
     render() {
         return (
             <div className="home">
                 <Layout>
+                    {
+                        console.log('home')
+                    }
                     <Header className="header">
                         <div className="header-content">
                             <div className="logo">运营管理后台</div>
@@ -51,8 +58,8 @@ class Home extends Component {
                 <Layout className="sider">
                     <Sider>
                         <Menu
-                            defaultSelectedKeys={['1']}
-                            defaultOpenKeys={['sub1']}
+                            defaultSelectedKeys={['license']}
+                            defaultOpenKeys={['license']}
                             mode="inline"
                             theme="dark"
                             inlineCollapsed={this.state.collapsed}

@@ -23,3 +23,7 @@ export class AuthInfo {
 export class UserInfo {
     @observable account = null;
 }
+
+export class Common {
+    @observable hideLogin = false;
+}
